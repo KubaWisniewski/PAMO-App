@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">QuizMania</string>
+    <string name="welcome_message">Witaj w QuizManii</string>
+    <string name="login_button_text">Zaloguj sie</string>
+    <string name="register_button_text">Zarejestruj sie</string>
+    <string name="login_text_value">ZALOGUJ SIE</string>
+</resources>
