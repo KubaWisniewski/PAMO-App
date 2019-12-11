@@ -21,12 +21,22 @@ public class MainActivity extends AppCompatActivity {
                 lanuchLoginActivity();
             }
         });
-
+        register = findViewById(R.id.register_button);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lanuchRegisterActivity();
+            }
+        });
     }
 
     private void lanuchLoginActivity() {
-
         Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    private void lanuchRegisterActivity() {
+        Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
 

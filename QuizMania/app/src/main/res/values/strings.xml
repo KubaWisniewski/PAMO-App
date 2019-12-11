@@ -4,4 +4,12 @@
     <string name="login_button_text">Zaloguj sie</string>
     <string name="register_button_text">Zarejestruj sie</string>
     <string name="login_text_value">ZALOGUJ SIE</string>
+    <string name="Email">Email</string>
+    <string name="password">Haslo</string>
+    <string name="registerTextViewContent">ZAREJESTRUJ SIE</string>
+    <string name="username_text">Nazwa uzytkownika</string>
+    <string name="emailResource">emial</string>
+    <string name="menRadioButtonValue">Mezczyzna</string>
+    <string name="womenValueResource">Kobieta</string>
+    <string name="pick_date">Data urodzenia</string>
 </resources>
