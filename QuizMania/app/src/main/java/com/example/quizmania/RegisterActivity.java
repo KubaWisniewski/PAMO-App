@@ -7,9 +7,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.quizmania.service.LoginPayload;
 import com.example.quizmania.service.RegisterPayload;
-import com.example.quizmania.service.UserService;
+import com.example.quizmania.service.AuthService;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,7 +30,6 @@ public class RegisterActivity extends AppCompatActivity {
                 .baseUrl("http://192.168.1.107:8081/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
         registerPayload.username = "tutor";
         registerPayload.email = "ttt@wp.pl";
         registerPayload.gender = "MALE";
@@ -41,8 +39,8 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserService userService = retrofit.create(UserService.class);
-                Call<RegisterPayload> call = userService.register(registerPayload);
+                AuthService authService = retrofit.create(AuthService.class);
+                Call<RegisterPayload> call = authService.register(registerPayload);
                 call.enqueue(new Callback<RegisterPayload>() {
                     @Override
                     public void onResponse(Call<RegisterPayload> call, Response<RegisterPayload> response) {
