@@ -11,6 +11,7 @@ android:
     - extra-android-m2repository
 
 before_install:
+  - cd QuizMania
   - chmod +x gradlew
 script:
   - cd QuizMania
