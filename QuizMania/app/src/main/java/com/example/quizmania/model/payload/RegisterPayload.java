@@ -1,4 +1,4 @@
-package com.example.quizmania.service;
+package com.example.quizmania.model.payload;
 
 public class RegisterPayload {
     public String username;

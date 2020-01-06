@@ -1,5 +1,8 @@
 package com.example.quizmania.service;
 
+import com.example.quizmania.model.payload.LoginPayload;
+import com.example.quizmania.model.payload.RegisterPayload;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
