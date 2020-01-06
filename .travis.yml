@@ -14,5 +14,4 @@ before_install:
   - cd QuizMania
   - chmod +x gradlew
 script:
-  - cd QuizMania
   - ./gradlew build
