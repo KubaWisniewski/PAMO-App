@@ -7,29 +7,21 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.quizmania.service.RegisterPayload;
-import com.example.quizmania.service.AuthService;
+import com.example.quizmania.service.Api;
+import com.example.quizmania.model.payload.RegisterPayload;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RegisterActivity extends AppCompatActivity {
     public RegisterPayload registerPayload = new RegisterPayload();
-    private Button registerButton;
-    private TextView ageLabel;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_activity);
-        registerButton = findViewById(R.id.register_button_id);
-        ageLabel = findViewById(R.id.age_id);
-        final Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.107:8081/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        Button registerButton = findViewById(R.id.register_button_id);
+        TextView ageLabel = findViewById(R.id.age_id);
         registerPayload.username = "tutor";
         registerPayload.email = "ttt@wp.pl";
         registerPayload.gender = "MALE";
@@ -39,9 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AuthService authService = retrofit.create(AuthService.class);
-                Call<RegisterPayload> call = authService.register(registerPayload);
-                call.enqueue(new Callback<RegisterPayload>() {
+                Api.getInstance().getAuthService().register(registerPayload).enqueue(new Callback<RegisterPayload>() {
                     @Override
                     public void onResponse(Call<RegisterPayload> call, Response<RegisterPayload> response) {
                         System.out.println(response);
