@@ -19,9 +19,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-    Button login;
-    LoginPayload loginPayload = new LoginPayload();
-    TextView emailField, passwordField;
+    private Button login;
+    private TextView emailField, passwordField;
     public static String token = "";
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,21 +41,25 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginPayload.email = emailField.getText().toString();
-                loginPayload.password = passwordField.getText().toString();
-                Api.getInstance().getAuthService().login(loginPayload).enqueue(new Callback<LoginPayload>() {
-                    @Override
-                    public void onResponse(Call<LoginPayload> call, Response<LoginPayload> response) {
-                        System.out.println(response.headers().get("X-Auth-Token"));
-                        token = response.headers().get("X-Auth-Token");
-                        startActivity(intent);
-                    }
+                Api
+                        .getInstance()
+                        .getAuthService()
+                        .login(LoginPayload.builder()
+                                .email(emailField.getText().toString())
+                                .password(passwordField.getText().toString()).build())
+                        .enqueue(new Callback<LoginPayload>() {
+                            @Override
+                            public void onResponse(Call<LoginPayload> call, Response<LoginPayload> response) {
+                                System.out.println(response.headers().get("X-Auth-Token"));
+                                token = response.headers().get("X-Auth-Token");
+                                startActivity(intent);
+                            }
 
-                    @Override
-                    public void onFailure(Call<LoginPayload> call, Throwable t) {
-                        System.out.println(t);
-                    }
-                });
+                            @Override
+                            public void onFailure(Call<LoginPayload> call, Throwable t) {
+                                System.out.println(t);
+                            }
+                        });
             }
         });
     }

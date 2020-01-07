@@ -16,14 +16,12 @@ import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
     public RegisterPayload registerPayload = new RegisterPayload();
-    private Button registerButton;
-    private TextView ageLabel;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_activity);
-        registerButton = findViewById(R.id.register_button_id);
-        ageLabel = findViewById(R.id.age_id);
+        Button registerButton = findViewById(R.id.register_button_id);
+        TextView ageLabel = findViewById(R.id.age_id);
         registerPayload.username = "tutor";
         registerPayload.email = "ttt@wp.pl";
         registerPayload.gender = "MALE";

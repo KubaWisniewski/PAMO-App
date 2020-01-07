@@ -12,6 +12,12 @@ public class Api {
     private UserService userService;
     private AuthService authService;
 
+    /**
+     * Getter for Api instance
+     *
+     * @return Api
+     */
+
     public static Api getInstance() {
         if (instance == null) {
             instance = new Api();
@@ -20,6 +26,9 @@ public class Api {
         return instance;
     }
 
+    /**
+     * No arg constructor
+     */
     private Api() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -29,10 +38,20 @@ public class Api {
         this.authService = retrofit.create(AuthService.class);
     }
 
+    /**
+     * Getter for UserService
+     *
+     * @return UserService
+     */
     public UserService getUserService() {
         return userService;
     }
 
+    /**
+     * Getter for AuthService
+     *
+     * @return AuthService
+     */
     public AuthService getAuthService() {
         return authService;
     }

@@ -1,4 +1,4 @@
-package com.example.quizmania.model.payload;
+package com.example.quizmania.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,13 +6,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Class to map login payload
+ * Model class for user role
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginPayload {
-    public String email;
-    public String password;
+public class Role {
+    private Long id;
+    private String roleName;
 }
