@@ -12,4 +12,9 @@
     <string name="menRadioButtonValue">Mezczyzna</string>
     <string name="womenValueResource">Kobieta</string>
     <string name="pick_date">Data urodzenia</string>
+    <string name="register_text_2" />
+    <string name="profile_button_text">Profil</string>
+    <string name="Ranking_button_text">Ranking</string>
+    <string name="Punkty">Punkty</string>
+    <string name="QuizDone">Ukończonych quizów:</string>
 </resources>
