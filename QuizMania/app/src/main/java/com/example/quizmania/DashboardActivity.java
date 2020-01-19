@@ -1,6 +1,8 @@
 package com.example.quizmania;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,11 +20,13 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_activity);
 
+        Button quiz = findViewById(R.id.quiz_button);
+        quiz.setOnClickListener(v -> lanuchQuizActivity());
+
         Api.getInstance().getUserService().checkMe(token).enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 User user = response.body();
-                System.out.println(user.toString());
             }
 
             @Override
@@ -32,4 +36,8 @@ public class DashboardActivity extends AppCompatActivity {
         });
     }
 
+    private void lanuchQuizActivity() {
+        Intent intent = new Intent(this, QuizListActivity.class);
+        startActivity(intent);
+    }
 }

@@ -28,21 +28,16 @@ public class RegisterActivity extends AppCompatActivity {
         registerPayload.password = "qwerty";
         registerPayload.dateOfBirth = "1996-05-11";
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(v -> Api.getInstance().getAuthService().register(registerPayload).enqueue(new Callback<RegisterPayload>() {
             @Override
-            public void onClick(View v) {
-                Api.getInstance().getAuthService().register(registerPayload).enqueue(new Callback<RegisterPayload>() {
-                    @Override
-                    public void onResponse(Call<RegisterPayload> call, Response<RegisterPayload> response) {
-                        System.out.println(response);
-                    }
-
-                    @Override
-                    public void onFailure(Call<RegisterPayload> call, Throwable t) {
-                        System.out.println(t);
-                    }
-                });
+            public void onResponse(Call<RegisterPayload> call, Response<RegisterPayload> response) {
+                System.out.println(response);
             }
-        });
+
+            @Override
+            public void onFailure(Call<RegisterPayload> call, Throwable t) {
+                System.out.println(t);
+            }
+        }));
     }
 }

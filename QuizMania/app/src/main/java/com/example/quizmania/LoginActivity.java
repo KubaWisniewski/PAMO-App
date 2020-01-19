@@ -38,30 +38,25 @@ public class LoginActivity extends AppCompatActivity {
         validateEmail();
         validatePassword();
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Api
-                        .getInstance()
-                        .getAuthService()
-                        .login(LoginPayload.builder()
-                                .email(emailField.getText().toString())
-                                .password(passwordField.getText().toString()).build())
-                        .enqueue(new Callback<LoginPayload>() {
-                            @Override
-                            public void onResponse(Call<LoginPayload> call, Response<LoginPayload> response) {
-                                System.out.println(response.headers().get("X-Auth-Token"));
-                                token = response.headers().get("X-Auth-Token");
-                                startActivity(intent);
-                            }
+        login.setOnClickListener(v -> Api
+                .getInstance()
+                .getAuthService()
+                .login(LoginPayload.builder()
+                        .email(emailField.getText().toString())
+                        .password(passwordField.getText().toString()).build())
+                .enqueue(new Callback<LoginPayload>() {
+                    @Override
+                    public void onResponse(Call<LoginPayload> call, Response<LoginPayload> response) {
+                        System.out.println(response.headers().get("X-Auth-Token"));
+                        token = response.headers().get("X-Auth-Token");
+                        startActivity(intent);
+                    }
 
-                            @Override
-                            public void onFailure(Call<LoginPayload> call, Throwable t) {
-                                System.out.println(t);
-                            }
-                        });
-            }
-        });
+                    @Override
+                    public void onFailure(Call<LoginPayload> call, Throwable t) {
+                        System.out.println(t);
+                    }
+                }));
     }
 
     private void validateEmail() {

@@ -11,6 +11,7 @@ public class Api {
     private static Api instance = null;
     private UserService userService;
     private AuthService authService;
+    private QuizService quizService;
 
     /**
      * Getter for Api instance
@@ -36,6 +37,7 @@ public class Api {
                 .build();
         this.userService = retrofit.create(UserService.class);
         this.authService = retrofit.create(AuthService.class);
+        this.quizService = retrofit.create(QuizService.class);
     }
 
     /**
@@ -54,5 +56,14 @@ public class Api {
      */
     public AuthService getAuthService() {
         return authService;
+    }
+
+    /**
+     * Getter for QuizService
+     *
+     * @return QuizService
+     */
+    public QuizService getQuizService() {
+        return quizService;
     }
 }
