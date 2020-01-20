@@ -1,4 +1,4 @@
-package com.example.quizmania;
+package com.example.quizmania.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.quizmania.R;
 import com.example.quizmania.model.UserScore;
 
 import java.util.ArrayList;
@@ -34,7 +35,6 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.RankingV
         UserScore currentItem = muserScores.get(position);
         String username = currentItem.getUsername();
         Integer points = currentItem.getTotalScore();
-
         holder.username.setText(username);
         holder.points.setText("Points: " + points);
     }
@@ -44,11 +44,11 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.RankingV
         return muserScores.size();
     }
 
-    public class RankingViewHolder extends RecyclerView.ViewHolder {
-        public TextView username;
-        public TextView points;
+    class RankingViewHolder extends RecyclerView.ViewHolder {
+        TextView username;
+        TextView points;
 
-        public RankingViewHolder(View itemView) {
+        RankingViewHolder(View itemView) {
             super(itemView);
             username = itemView.findViewById(R.id.text_view_username);
             points = itemView.findViewById(R.id.text_view_points);

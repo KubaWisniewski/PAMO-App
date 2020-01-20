@@ -7,10 +7,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Class with retrofit instance using singleton design pattern
  */
 public class Api {
-    private static final String BASE_URL = "http://192.168.1.108:8081";
+    private static final String BASE_URL = "http://192.168.0.24:8081/";
     private static Api instance = null;
     private UserService userService;
     private AuthService authService;
+    private QuizService quizService;
 
     /**
      * Getter for Api instance
@@ -36,6 +37,7 @@ public class Api {
                 .build();
         this.userService = retrofit.create(UserService.class);
         this.authService = retrofit.create(AuthService.class);
+        this.quizService = retrofit.create(QuizService.class);
     }
 
     /**
@@ -54,5 +56,14 @@ public class Api {
      */
     public AuthService getAuthService() {
         return authService;
+    }
+
+    /**
+     * Getter for QuizService
+     *
+     * @return QuizService
+     */
+    public QuizService getQuizService() {
+        return quizService;
     }
 }

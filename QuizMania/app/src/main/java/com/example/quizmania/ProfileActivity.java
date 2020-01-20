@@ -49,7 +49,6 @@ public class ProfileActivity extends AppCompatActivity {
                         System.out.println(t);
                     }
                 });
-
             }
 
             @Override
@@ -57,8 +56,6 @@ public class ProfileActivity extends AppCompatActivity {
                 System.out.println(t);
             }
         });
-
-
     }
 }
 

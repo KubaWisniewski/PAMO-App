@@ -31,47 +31,38 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.registerPassword_id);
         registerPayload.dateOfBirth = "1996-05-11";
 
-
-        gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                View radioButton = gender.findViewById(checkedId);
-                int index = gender.indexOfChild(radioButton);
-                switch (index) {
-                    case 0:
-                        registerPayload.gender = "Mezczyzna";
-                        System.out.println(index);
-                        break;
-                    case 1:
-                        registerPayload.gender = "Kobieta";
-                        System.out.println(index);
-                        break;
-                }
+        gender.setOnCheckedChangeListener((group, checkedId) -> {
+            View radioButton = gender.findViewById(checkedId);
+            int index = gender.indexOfChild(radioButton);
+            switch (index) {
+                case 0:
+                    registerPayload.gender = "Mezczyzna";
+                    System.out.println(index);
+                    break;
+                case 1:
+                    registerPayload.gender = "Kobieta";
+                    System.out.println(index);
+                    break;
             }
         });
 
-
         final Intent intent = new Intent(this, LoginActivity.class);
-        registerButton.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(v -> {
+            registerPayload.username = login.getText().toString();
+            registerPayload.email = email.getText().toString();
+            registerPayload.password = password.getText().toString();
 
-            @Override
-            public void onClick(View v) {
-                registerPayload.username = login.getText().toString();
-                registerPayload.email = email.getText().toString();
-                registerPayload.password = password.getText().toString();
+            Api.getInstance().getAuthService().register(registerPayload).enqueue(new Callback<RegisterPayload>() {
+                @Override
+                public void onResponse(Call<RegisterPayload> call, Response<RegisterPayload> response) {
+                    startActivity(intent);
+                }
 
-                Api.getInstance().getAuthService().register(registerPayload).enqueue(new Callback<RegisterPayload>() {
-                    @Override
-                    public void onResponse(Call<RegisterPayload> call, Response<RegisterPayload> response) {
-                        startActivity(intent);
-                    }
-
-                    @Override
-                    public void onFailure(Call<RegisterPayload> call, Throwable t) {
-                        System.out.println(t);
-                    }
-                });
-            }
+                @Override
+                public void onFailure(Call<RegisterPayload> call, Throwable t) {
+                    System.out.println(t);
+                }
+            });
         });
     }
 }
