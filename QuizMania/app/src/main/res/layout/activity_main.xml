@@ -2,13 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_green_dark"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/welcome_text_id"
+        android:id="@+id/welcome_text_view"
         android:layout_width="325dp"
         android:layout_height="66dp"
         android:fontFamily="monospace"
@@ -30,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_text_id"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_text_view"
         app:layout_constraintVertical_bias="0.045" />
 
     <Button
