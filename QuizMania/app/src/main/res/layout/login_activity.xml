@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/login_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
@@ -44,8 +45,8 @@
             android:id="@+id/button_login_id"
             android:layout_width="88dp"
             android:layout_height="37dp"
-            android:onClick="confirmInput"
             android:layout_marginBottom="196dp"
+            android:onClick="confirmInput"
             android:text="@string/login_button_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
