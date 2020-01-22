@@ -9,7 +9,7 @@
         android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/holo_green_dark">
+        android:background="@drawable/background">
 
         <TextView
             android:id="@+id/login_text"

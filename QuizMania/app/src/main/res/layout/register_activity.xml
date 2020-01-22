@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/holo_green_dark">
+        android:background="@drawable/background">
 
         <TextView
             android:id="@+id/register_text_id_2"
@@ -18,6 +20,7 @@
             android:fontFamily="monospace"
             android:text="@string/register_button_text"
             android:textAlignment="center"
+            android:textColor="@color/cardview_light_background"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -34,6 +37,7 @@
             android:ems="10"
             android:hint="@string/username_text"
             android:inputType="textPersonName"
+            android:textColor="@color/cardview_light_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.595"
@@ -48,6 +52,7 @@
             android:ems="10"
             android:hint="@string/Email"
             android:inputType="textEmailAddress"
+            android:textColor="@color/cardview_light_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.588"
@@ -62,6 +67,7 @@
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
+            android:textColor="@color/cardview_light_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.57"
@@ -84,13 +90,15 @@
                 android:id="@+id/menRadioButtonId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/menRadioButtonValue" />
+                android:text="@string/menRadioButtonValue"
+                android:textColor="@color/cardview_light_background" />
 
             <RadioButton
                 android:id="@+id/womenRadioButtonId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/womenValueResource" />
+                android:text="@string/womenValueResource"
+                android:textColor="@color/cardview_light_background" />
         </RadioGroup>
 
         <Button
@@ -109,6 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/username_text"
+            android:textColor="@color/cardview_light_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.034"
@@ -121,23 +130,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Email"
+            android:textColor="@color/cardview_light_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintHorizontal_bias="0.14"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.382" />
+            app:layout_constraintVertical_bias="0.375" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/password"
+            android:textColor="@color/cardview_light_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintHorizontal_bias="0.136"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.464" />
+            app:layout_constraintVertical_bias="0.46" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
