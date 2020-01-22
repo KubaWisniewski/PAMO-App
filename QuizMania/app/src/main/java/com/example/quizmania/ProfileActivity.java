@@ -24,10 +24,10 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
-        username = findViewById(R.id.username_info_id);
-        email = findViewById(R.id.email_info_id);
-        point = findViewById(R.id.point_profile_info_id);
-        doneQuiz = findViewById(R.id.quiz_done_id);
+        username = findViewById(R.id.profile_username_text_view);
+        email = findViewById(R.id.profile_email_text_view);
+        point = findViewById(R.id.profile_points_text_view);
+        doneQuiz = findViewById(R.id.profile_quiz_done_text_view);
 
         Api.getInstance().getUserService().checkMe(token).enqueue(new Callback<User>() {
             @Override

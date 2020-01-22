@@ -12,8 +12,8 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_activity);
-        profileButton = findViewById(R.id.button_profile);
-        rankingButton = findViewById(R.id.ranking_button_id);
+        profileButton = findViewById(R.id.profile_button);
+        rankingButton = findViewById(R.id.ranking_button);
         Button quiz = findViewById(R.id.quiz_button);
 
         profileButton.setOnClickListener(v -> lanuchProfileActivity());

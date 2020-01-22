@@ -29,14 +29,9 @@ public class LoginActivity extends AppCompatActivity {
         emailField = findViewById(R.id.login_act_email_id);
         passwordField = findViewById(R.id.login_actv_password_id);
         final Intent intent = new Intent(this, DashboardActivity.class);
-
-        final SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        final SharedPreferences.Editor editor = sharedPref.edit();
-
         login.setEnabled(false);
         validateEmail();
         validatePassword();
-
         login.setOnClickListener(v -> Api
                 .getInstance()
                 .getAuthService()
@@ -86,11 +81,5 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    private void validate() {
-        if (passwordField.getText().toString().isEmpty() && emailField.getText().toString().isEmpty()) {
-            login.setEnabled(true);
-        }
     }
 }

@@ -58,11 +58,11 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-        answer1 = findViewById(R.id.answer1Button);
-        answer2 = findViewById(R.id.answer2Button);
-        answer3 = findViewById(R.id.answer3Button);
-        answer4 = findViewById(R.id.answer4Button);
-        question = findViewById(R.id.questionTextView);
+        answer1 = findViewById(R.id.answer_1_button);
+        answer2 = findViewById(R.id.answer_2_button);
+        answer3 = findViewById(R.id.answer_3_button);
+        answer4 = findViewById(R.id.answer_4_button);
+        question = findViewById(R.id.question_text_view);
 
         answer1.setOnClickListener(view -> {
             setButtonClickable(false);

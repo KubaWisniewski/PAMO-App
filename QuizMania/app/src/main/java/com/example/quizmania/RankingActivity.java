@@ -43,7 +43,7 @@ public class RankingActivity extends AppCompatActivity {
 
     private void showData(ArrayList<UserScore> userScores) {
         userScores = userScores.stream().sorted(Comparator.comparing(UserScore::getTotalScore).reversed()).collect(Collectors.toCollection(ArrayList::new));
-        recyclerView = findViewById(R.id.recycle_view);
+        recyclerView = findViewById(R.id.ranking_recycler_view);
         rankingAdapter = new RankingAdapter(this, userScores);
         recyclerView.setAdapter(rankingAdapter);
         recyclerView.setHasFixedSize(true);

@@ -29,7 +29,7 @@ public class QuizListActivity extends AppCompatActivity implements OnItemClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_list);
-        this.mRecyclerView = findViewById(R.id.quizListView);
+        this.mRecyclerView = findViewById(R.id.quiz_list_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         Api.getInstance().getQuizService().getQuizs(token).enqueue(new Callback<List<Quiz>>() {
             @Override
