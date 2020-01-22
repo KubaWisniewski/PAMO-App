@@ -2,16 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/profile_view"
+    android:layout_width="match_parent"
     android:background="@drawable/background"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile_constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/profile_username_label"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#c6c6c6"
@@ -21,7 +24,7 @@
             tools:layout_editor_absoluteX="0dp" />
 
         <TextView
-            android:id="@+id/email_profile_id"
+            android:id="@+id/profile_email_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Email"
@@ -35,7 +38,7 @@
             app:layout_constraintVertical_bias="0.435" />
 
         <TextView
-            android:id="@+id/quizDone_profile_id"
+            android:id="@+id/profile_quiz_done_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/QuizDone"
@@ -49,7 +52,7 @@
             app:layout_constraintVertical_bias="0.499" />
 
         <TextView
-            android:id="@+id/point_profile_id"
+            android:id="@+id/profile_points_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Punkty"
@@ -63,7 +66,7 @@
             app:layout_constraintVertical_bias="0.567" />
 
         <TextView
-            android:id="@+id/username_info_id"
+            android:id="@+id/profile_username_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorButtonBackground"
@@ -76,7 +79,7 @@
             app:layout_constraintVertical_bias="0.306" />
 
         <TextView
-            android:id="@+id/email_info_id"
+            android:id="@+id/profile_email_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorButtonBackground"
@@ -89,7 +92,7 @@
             app:layout_constraintVertical_bias="0.435" />
 
         <TextView
-            android:id="@+id/quiz_done_id"
+            android:id="@+id/profile_quiz_done_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorButtonBackground"
@@ -101,7 +104,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/point_profile_info_id"
+            android:id="@+id/profile_points_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorButtonBackground"

@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Class with retrofit instance using singleton design pattern
  */
 public class Api {
-    private static final String BASE_URL = "http://192.168.1.108:8081/";
+    public static String BASE_URL = "http://192.168.1.108:8081/";
     private static Api instance = null;
     private UserService userService;
     private AuthService authService;

@@ -6,6 +6,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Class for main view activity
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override

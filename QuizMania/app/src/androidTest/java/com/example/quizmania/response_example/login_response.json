@@ -1,0 +1,16 @@
+{
+  "id": 65,
+  "username": "test",
+  "password": "$2a$10$VvbL6rai1llPB0egYuE0D.cA4m6J9BTHGU.BMF8sjMvrg/lM99JrW",
+  "gender": "MALE",
+  "email": "test@test.com",
+  "rolesDto": [
+    {
+      "id": 1,
+      "roleName": "ROLE_USER"
+    }
+  ],
+  "balance": 10,
+  "dateOfBirth": "2020-01-17",
+  "userQuizDtos": null
+}

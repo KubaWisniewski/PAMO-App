@@ -1,8 +1,6 @@
 package com.example.quizmania;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,10 +11,16 @@ import com.example.quizmania.service.Api;
 import com.example.quizmania.model.payload.LoginPayload;
 import com.example.quizmania.utils.TextValidator;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Class for login view activity
+ */
 public class LoginActivity extends AppCompatActivity {
     private Button login;
     private TextView emailField, passwordField;
@@ -26,17 +30,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
         login = findViewById(R.id.button_login_id);
-        emailField = findViewById(R.id.login_act_email_id);
-        passwordField = findViewById(R.id.login_actv_password_id);
+        emailField = findViewById(R.id.email_edit_text);
+        passwordField = findViewById(R.id.password_edit_text);
         final Intent intent = new Intent(this, DashboardActivity.class);
-
-        final SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        final SharedPreferences.Editor editor = sharedPref.edit();
-
         login.setEnabled(false);
         validateEmail();
         validatePassword();
-
         login.setOnClickListener(v -> Api
                 .getInstance()
                 .getAuthService()
@@ -46,9 +45,13 @@ public class LoginActivity extends AppCompatActivity {
                 .enqueue(new Callback<LoginPayload>() {
                     @Override
                     public void onResponse(Call<LoginPayload> call, Response<LoginPayload> response) {
-                        System.out.println(response.headers().get("X-Auth-Token"));
-                        token = response.headers().get("X-Auth-Token");
-                        startActivity(intent);
+                        if (response.code() == 200) {
+
+                            token = response.headers().get("X-Auth-Token");
+                            startActivity(intent);
+                        } else {
+                            emailField.setError("Błąd logowania!");
+                        }
                     }
 
                     @Override
@@ -67,7 +70,14 @@ public class LoginActivity extends AppCompatActivity {
                     emailField.setError("To pole nie może być puste");
                     login.setEnabled(false);
                 } else {
-                    login.setEnabled(true);
+                    String regex = "[^@]+@[^.]+\\..+";
+                    Pattern pattern = Pattern.compile(regex);
+                    Matcher matcher = pattern.matcher(text);
+                    if (matcher.matches()) {
+                        login.setEnabled(true);
+                    } else {
+                        emailField.setError("To chyba nie email :(");
+                    }
                 }
             }
         });
@@ -86,11 +96,5 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    private void validate() {
-        if (passwordField.getText().toString().isEmpty() && emailField.getText().toString().isEmpty()) {
-            login.setEnabled(true);
-        }
     }
 }

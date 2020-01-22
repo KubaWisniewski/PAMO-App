@@ -21,7 +21,7 @@
     <string name="register_text_2" />
     <string name="profile_button_text">Profil</string>
     <string name="quiz_button_text">Quiz</string>
-    <string name="Ranking_button_text">Ranking</string>
+    <string name="ranking_button_text">Ranking</string>
     <string name="Punkty">Punkty</string>
     <string name="QuizDone">Ukończonych quizów:</string>
     <string name="KreatorQuziów">Kreator quizów</string>

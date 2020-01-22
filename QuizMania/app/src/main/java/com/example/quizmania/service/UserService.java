@@ -23,7 +23,7 @@ public interface UserService {
     Call<User> checkMe(@Header("X-Auth-Token") String authorization);
 
     /**
-     * GET checkMe method
+     * GET getRanking method
      *
      * @param authorization It's a token required to authorization.
      * @return List of UserScore class

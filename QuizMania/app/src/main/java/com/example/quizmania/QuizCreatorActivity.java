@@ -26,7 +26,7 @@ public class QuizCreatorActivity extends Activity {
         webSettings.setDomStorageEnabled(true);
         webSettings.setAllowFileAccess(true);
         webSettings.setAllowUniversalAccessFromFileURLs(true);
-        mWebView.loadUrl("http://192.168.1.108:8080/admin");
+        mWebView.loadUrl("http://192.168.1.108:5000/admin");
 
         mWebView.setWebViewClient(new MyWebViewClient());
     }

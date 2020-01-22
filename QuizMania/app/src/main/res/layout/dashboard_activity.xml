@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dashboard"
+    android:id="@+id/dashboard_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ConstraintLayout"
+        android:id="@+id/dashboard_constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background">
 
         <Button
-            android:id="@+id/button_profile"
+            android:id="@+id/profile_button"
             android:layout_width="191dp"
             android:layout_height="63dp"
             android:layout_margin="2dp"
@@ -30,7 +29,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.48" />
+            app:layout_constraintVertical_bias="0.48"/>
 
         <Button
             android:id="@+id/quiz_button"
@@ -51,14 +50,14 @@
             app:layout_constraintVertical_bias="0.332" />
 
         <Button
-            android:id="@+id/ranking_button_id"
+            android:id="@+id/ranking_button"
             android:layout_width="191dp"
             android:layout_height="63dp"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:background="#e7595d"
             android:duplicateParentState="false"
-            android:text="@string/Ranking_button_text"
+            android:text="@string/ranking_button_text"
             android:textAllCaps="true"
             android:textColor="#fff"
             android:textSize="18sp"
