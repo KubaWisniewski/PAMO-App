@@ -6,14 +6,16 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Class for dashboard view activity
+ */
 public class DashboardActivity extends AppCompatActivity {
-    public Button profileButton, rankingButton;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_activity);
-        profileButton = findViewById(R.id.button_profile);
-        rankingButton = findViewById(R.id.ranking_button_id);
+        Button profileButton = findViewById(R.id.profile_button);
+        Button rankingButton = findViewById(R.id.ranking_button);
         Button quiz = findViewById(R.id.quiz_button);
 
         profileButton.setOnClickListener(v -> lanuchProfileActivity());
@@ -21,16 +23,25 @@ public class DashboardActivity extends AppCompatActivity {
         quiz.setOnClickListener(v -> lanuchQuizActivity());
     }
 
+    /**
+     * Method to launch profile view
+     */
     private void lanuchProfileActivity() {
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Method to launch ranking view
+     */
     private void lanuchRankingActivity() {
         Intent intent = new Intent(this, RankingActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Method to launch quiz view
+     */
     private void lanuchQuizActivity() {
         Intent intent = new Intent(this, QuizListActivity.class);
         startActivity(intent);

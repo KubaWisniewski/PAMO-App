@@ -22,9 +22,8 @@ public class MainActivityTest {
     @Rule
     public ActivityScenarioRule<MainActivity> rule = new ActivityScenarioRule<>(MainActivity.class);
 
-
     @Test
-    public void Activity_Should_Be_Displayed_In_View_Test() {
+    public void Main_Activity_Should_Be_Displayed_In_View_Test() {
         onView(withId(R.id.main_view)).check(matches(isDisplayed()));
     }
 

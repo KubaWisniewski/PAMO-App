@@ -2,43 +2,45 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/quiz_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".QuizActivity">
 
     <RelativeLayout
+        android:id="@+id/quiz_relative_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/answer1Button"
+            android:id="@+id/answer_1_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/answer2Button"
+            android:layout_above="@+id/answer_2_button"
             android:layout_centerHorizontal="true"
             android:layout_margin="10dp"
             android:background="@color/colorButtonBackground" />
 
         <Button
-            android:id="@+id/answer2Button"
+            android:id="@+id/answer_2_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/answer3Button"
+            android:layout_above="@+id/answer_3_button"
             android:layout_centerHorizontal="true"
             android:layout_margin="10dp"
             android:background="@color/colorButtonBackground" />
 
         <Button
-            android:id="@+id/answer3Button"
+            android:id="@+id/answer_3_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/answer4Button"
+            android:layout_above="@+id/answer_4_button"
             android:layout_centerHorizontal="true"
             android:layout_margin="10dp"
             android:background="@color/colorButtonBackground" />
 
         <Button
-            android:id="@+id/answer4Button"
+            android:id="@+id/answer_4_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -47,7 +49,7 @@
             android:background="@color/colorButtonBackground" />
 
         <TextView
-            android:id="@+id/scoreTextView"
+            android:id="@+id/score_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -56,14 +58,13 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/questionTextView"
+            android:id="@+id/question_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/answer1Button"
-            android:layout_below="@+id/scoreTextView"
+            android:layout_above="@+id/answer_1_button"
+            android:layout_below="@+id/score_text_view"
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:textSize="24sp" />
     </RelativeLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

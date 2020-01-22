@@ -16,6 +16,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Class for register view activity
+ */
 public class RegisterActivity extends AppCompatActivity {
     public RegisterPayload registerPayload = new RegisterPayload();
     private TextView login, email, password;

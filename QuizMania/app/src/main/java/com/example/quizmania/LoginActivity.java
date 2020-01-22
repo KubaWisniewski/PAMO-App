@@ -1,8 +1,6 @@
 package com.example.quizmania;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,6 +15,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Class for login view activity
+ */
 public class LoginActivity extends AppCompatActivity {
     private Button login;
     private TextView emailField, passwordField;
@@ -29,14 +30,9 @@ public class LoginActivity extends AppCompatActivity {
         emailField = findViewById(R.id.login_act_email_id);
         passwordField = findViewById(R.id.login_actv_password_id);
         final Intent intent = new Intent(this, DashboardActivity.class);
-
-        final SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        final SharedPreferences.Editor editor = sharedPref.edit();
-
         login.setEnabled(false);
         validateEmail();
         validatePassword();
-
         login.setOnClickListener(v -> Api
                 .getInstance()
                 .getAuthService()
@@ -86,11 +82,5 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    private void validate() {
-        if (passwordField.getText().toString().isEmpty() && emailField.getText().toString().isEmpty()) {
-            login.setEnabled(true);
-        }
     }
 }
