@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<LoginPayload> call, Response<LoginPayload> response) {
                         if (response.code() == 200) {
-                            System.out.println("111111111111111111111111111111");
+
                             token = response.headers().get("X-Auth-Token");
                             startActivity(intent);
                         } else {

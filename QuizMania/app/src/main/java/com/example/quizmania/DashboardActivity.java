@@ -17,10 +17,12 @@ public class DashboardActivity extends AppCompatActivity {
         Button profileButton = findViewById(R.id.profile_button);
         Button rankingButton = findViewById(R.id.ranking_button);
         Button quiz = findViewById(R.id.quiz_button);
+        Button quizCreator = findViewById(R.id.create_quiz_button);
 
         profileButton.setOnClickListener(v -> lanuchProfileActivity());
         rankingButton.setOnClickListener(v -> lanuchRankingActivity());
         quiz.setOnClickListener(v -> lanuchQuizActivity());
+        quizCreator.setOnClickListener(v -> lanuchQuizCreator());
     }
 
     /**
@@ -46,4 +48,11 @@ public class DashboardActivity extends AppCompatActivity {
         Intent intent = new Intent(this, QuizListActivity.class);
         startActivity(intent);
     }
+
+    private void lanuchQuizCreator() {
+        Intent intent = new Intent(this, QuizCreatorActivity.class);
+        startActivity(intent);
+    }
+
+
 }

@@ -38,11 +38,8 @@ public class LoginActivityTest {
 
     @Test
     public void Login_Form_Should_Be_Displayed_In_View_Test() {
-        onView(withId(R.id.email_text_view)).check(matches(isDisplayed()));
-        onView(withId(R.id.email_text_view)).check(matches(withText(R.string.Email)));
+
         onView(withId(R.id.email_edit_text)).check(matches(isDisplayed()));
-        onView(withId(R.id.password_text_view)).check(matches(isDisplayed()));
-        onView(withId(R.id.password_text_view)).check(matches(withText(R.string.password)));
         onView(withId(R.id.password_edit_text)).check(matches(isDisplayed()));
         onView(withId(R.id.button_login_id)).check(matches(isDisplayed()));
         onView(withId(R.id.button_login_id)).check(matches(withText(R.string.login_button_text)));

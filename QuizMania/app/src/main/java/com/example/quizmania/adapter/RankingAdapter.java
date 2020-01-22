@@ -36,7 +36,7 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.RankingV
         String username = currentItem.getUsername();
         Integer points = currentItem.getTotalScore();
         holder.username.setText(username);
-        holder.points.setText("Points: " + points);
+        holder.points.setText("Punkty: " + points);
     }
 
     @Override
