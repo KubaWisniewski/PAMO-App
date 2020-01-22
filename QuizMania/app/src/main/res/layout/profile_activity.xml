@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@drawable/background"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -9,45 +11,50 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/profile_username_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/username_text"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#c6c6c6"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.125"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.389" />
+            app:layout_constraintVertical_bias="0.33"
+            tools:layout_editor_absoluteX="0dp" />
 
         <TextView
             android:id="@+id/email_profile_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Email"
+            android:textColor="@color/colorButtonBackground"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.125"
+            app:layout_constraintHorizontal_bias="0.122"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.449" />
+            app:layout_constraintVertical_bias="0.435" />
 
         <TextView
             android:id="@+id/quizDone_profile_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/QuizDone"
+            android:textColor="@color/colorButtonBackground"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.125"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.499" />
 
         <TextView
             android:id="@+id/point_profile_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Punkty"
+            android:textColor="@color/colorButtonBackground"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.127"
@@ -59,28 +66,34 @@
             android:id="@+id/username_info_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorButtonBackground"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.616"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.389" />
+            app:layout_constraintVertical_bias="0.306" />
 
         <TextView
             android:id="@+id/email_info_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorButtonBackground"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.615"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.449" />
+            app:layout_constraintVertical_bias="0.435" />
 
         <TextView
             android:id="@+id/quiz_done_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorButtonBackground"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.615"
@@ -91,12 +104,25 @@
             android:id="@+id/point_profile_info_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorButtonBackground"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.615"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.567" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="139dp"
+            android:layout_height="159dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.06"
+            app:srcCompat="@drawable/man" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

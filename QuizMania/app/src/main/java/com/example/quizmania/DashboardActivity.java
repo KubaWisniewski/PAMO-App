@@ -15,10 +15,12 @@ public class DashboardActivity extends AppCompatActivity {
         profileButton = findViewById(R.id.button_profile);
         rankingButton = findViewById(R.id.ranking_button_id);
         Button quiz = findViewById(R.id.quiz_button);
+        Button quizCreator = findViewById(R.id.create_quiz_button);
 
         profileButton.setOnClickListener(v -> lanuchProfileActivity());
-        rankingButton.setOnClickListener(v -> lanuchQuizCreator());
+        rankingButton.setOnClickListener(v -> lanuchRankingActivity());
         quiz.setOnClickListener(v -> lanuchQuizActivity());
+        quizCreator.setOnClickListener(v -> lanuchQuizCreator());
     }
 
     private void lanuchProfileActivity() {

@@ -24,4 +24,6 @@
     <string name="Ranking_button_text">Ranking</string>
     <string name="Punkty">Punkty</string>
     <string name="QuizDone">Ukończonych quizów:</string>
+    <string name="KreatorQuziów">Kreator quizów</string>
+    <string name="Menu">MENU</string>
 </resources>
