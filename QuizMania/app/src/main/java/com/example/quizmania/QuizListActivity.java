@@ -20,6 +20,9 @@ import retrofit2.Response;
 
 import static com.example.quizmania.LoginActivity.token;
 
+/**
+ * Class for quiz list activity
+ */
 public class QuizListActivity extends AppCompatActivity implements OnItemClickListener {
     private RecyclerView mRecyclerView;
     private QuizListAdapter quizListAdapter;

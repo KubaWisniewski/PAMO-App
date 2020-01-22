@@ -26,6 +26,9 @@ import retrofit2.Response;
 
 import static com.example.quizmania.LoginActivity.token;
 
+/**
+ * Class for quiz view activity
+ */
 public class QuizActivity extends AppCompatActivity {
     private Button answer1, answer2, answer3, answer4;
     private TextView question;

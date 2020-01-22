@@ -20,6 +20,9 @@ import retrofit2.Response;
 
 import static com.example.quizmania.LoginActivity.token;
 
+/**
+ * Class for ranking view activity
+ */
 public class RankingActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RankingAdapter rankingAdapter;

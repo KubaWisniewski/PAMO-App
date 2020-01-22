@@ -17,6 +17,9 @@ import retrofit2.Response;
 
 import static com.example.quizmania.LoginActivity.token;
 
+/**
+ * Class for profile view activity
+ */
 public class ProfileActivity extends AppCompatActivity {
     public User user;
     private TextView username, email, point, doneQuiz;

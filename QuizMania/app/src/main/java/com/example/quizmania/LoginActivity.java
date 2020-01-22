@@ -1,8 +1,6 @@
 package com.example.quizmania;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,6 +15,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Class for login view activity
+ */
 public class LoginActivity extends AppCompatActivity {
     private Button login;
     private TextView emailField, passwordField;
