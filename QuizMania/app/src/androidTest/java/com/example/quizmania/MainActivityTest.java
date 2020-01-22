@@ -30,6 +30,7 @@ public class MainActivityTest {
     @Test
     public void Title_Should_Be_Displayed_In_View_Test() {
         onView(withId(R.id.welcome_text_view)).check(matches(isDisplayed()));
+        onView(withId(R.id.welcome_text_view)).check(matches(withText(R.string.welcome_message)));
     }
 
     @Test

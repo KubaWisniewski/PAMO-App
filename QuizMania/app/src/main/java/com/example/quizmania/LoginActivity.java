@@ -11,6 +11,9 @@ import com.example.quizmania.service.Api;
 import com.example.quizmania.model.payload.LoginPayload;
 import com.example.quizmania.utils.TextValidator;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,8 +30,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
         login = findViewById(R.id.button_login_id);
-        emailField = findViewById(R.id.login_act_email_id);
-        passwordField = findViewById(R.id.login_actv_password_id);
+        emailField = findViewById(R.id.email_edit_text);
+        passwordField = findViewById(R.id.password_edit_text);
         final Intent intent = new Intent(this, DashboardActivity.class);
         login.setEnabled(false);
         validateEmail();
@@ -42,9 +45,13 @@ public class LoginActivity extends AppCompatActivity {
                 .enqueue(new Callback<LoginPayload>() {
                     @Override
                     public void onResponse(Call<LoginPayload> call, Response<LoginPayload> response) {
-                        System.out.println(response.headers().get("X-Auth-Token"));
-                        token = response.headers().get("X-Auth-Token");
-                        startActivity(intent);
+                        if (response.code() == 200) {
+                            System.out.println("111111111111111111111111111111");
+                            token = response.headers().get("X-Auth-Token");
+                            startActivity(intent);
+                        } else {
+                            emailField.setError("Błąd logowania!");
+                        }
                     }
 
                     @Override
@@ -63,7 +70,14 @@ public class LoginActivity extends AppCompatActivity {
                     emailField.setError("To pole nie może być puste");
                     login.setEnabled(false);
                 } else {
-                    login.setEnabled(true);
+                    String regex = "[^@]+@[^.]+\\..+";
+                    Pattern pattern = Pattern.compile(regex);
+                    Matcher matcher = pattern.matcher(text);
+                    if (matcher.matches()) {
+                        login.setEnabled(true);
+                    } else {
+                        emailField.setError("To chyba nie email :(");
+                    }
                 }
             }
         });
