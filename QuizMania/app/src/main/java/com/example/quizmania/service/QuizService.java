@@ -16,6 +16,7 @@ import retrofit2.http.Path;
 public interface QuizService {
     /**
      * GET getQuiz method
+     *
      * @param authorization It's a token required to authorization.
      * @return Quiz object from api.
      */
@@ -23,7 +24,18 @@ public interface QuizService {
     Call<Quiz> getQuiz(@Header("X-Auth-Token") String authorization, @Path("id") Long id);
 
     /**
+     * POST joinQuiz method
+     * Join user to the quiz.
+     *
+     * @param authorization It's a token required to authorization.
+     * @return Quiz object from api.
+     */
+    @POST("/api/quiz/joinQuiz/{id}")
+    Call<Void> joinQuiz(@Header("X-Auth-Token") String authorization, @Path("id") Long id);
+
+    /**
      * GET getQuizs method
+     *
      * @param authorization It's a token required to authorization.
      * @return List of quiz objects from api.
      */
@@ -32,9 +44,10 @@ public interface QuizService {
 
     /**
      * POST voteOnAnswer method
+     *
      * @param authorization It's a token required to authorization.
-     * @param id of answer.
+     * @param id            of answer.
      */
-    @POST("/api/voteOnAnswer/{answerId}")
+    @POST("/api/quiz/voteOnAnswer/{answerId}")
     Call<Void> voteOnAnswer(@Header("X-Auth-Token") String authorization, @Path("answerId") Long id);
 }

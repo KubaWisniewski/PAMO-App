@@ -43,6 +43,18 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_activity);
+        Api.getInstance().getQuizService().joinQuiz(token, Long.parseLong(Objects.requireNonNull(getIntent().getStringExtra("QUIZ_ID")))).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                System.out.println(t);
+            }
+        });
+
         Api.getInstance().getQuizService().getQuiz(token, Long.parseLong(Objects.requireNonNull(getIntent().getStringExtra("QUIZ_ID")))).enqueue(new Callback<Quiz>() {
             @Override
             public void onResponse(Call<Quiz> call, Response<Quiz> response) {
@@ -138,7 +150,7 @@ public class QuizActivity extends AppCompatActivity {
     private void endTheGame() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(QuizActivity.this);
         alertDialogBuilder
-                .setMessage("Points: " + mScore)
+                .setMessage("Punkty: " + mScore)
                 .setCancelable(false)
                 .setNegativeButton(getString(R.string.exit_quiz),
                         (dialogInterface, i) -> {

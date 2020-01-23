@@ -66,6 +66,7 @@
             android:layout_below="@+id/score_text_view"
             android:layout_centerHorizontal="true"
             android:gravity="center"
+            android:textColor="@color/colorButtonBackground"
             android:textSize="24sp" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
